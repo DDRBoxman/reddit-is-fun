@@ -60,6 +60,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.TextAppearanceSpan;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -69,6 +70,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -1475,6 +1477,31 @@ public final class RedditIsFun extends ListActivity {
     	state.putParcelable(Constants.VOTE_TARGET_THING_INFO_KEY, mVoteTargetThingInfo);
     }
     
+	/**
+	 * Capture Key Events so we can scroll with the volume keys
+	 *
+	 **/
+	 
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+	    int action = event.getAction();
+	    int keyCode = event.getKeyCode();
+	        switch (keyCode) {
+	        case KeyEvent.KEYCODE_VOLUME_UP:
+	            if (action == KeyEvent.ACTION_UP) {
+	            	setSelection(getListView().getFirstVisiblePosition() - 1 );
+	            }
+	            return true;
+	        case KeyEvent.KEYCODE_VOLUME_DOWN:
+	            if (action == KeyEvent.ACTION_UP) {
+	            		setSelection(getListView().getLastVisiblePosition() + 1 );
+	            }
+	            return true;
+	        default:
+	            return super.dispatchKeyEvent(event);
+	        }
+	 }
+	
     /**
      * Called to "thaw" re-animate the app from a previous onSaveInstanceState().
      * 
