@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="wrap_content"
+  android:background="@drawable/header_bg"
+  android:layout_width="fill_parent" android:layout_marginTop="2px">
+  
+	<ImageButton
+		android:id="@+id/ImageButton01"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/logo"
+		android:background="@android:color/transparent" />
+	<LinearLayout
+		android:id="@+id/HeaderButtonLayout"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true">
+		
+		<ImageButton
+			android:id="@+id/HeaderButtonRefresh"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@android:color/transparent"
+			android:onClick="itemClicked" />
+		<ImageButton
+			android:id="@+id/HeaderButtonCreatePost"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:background="@android:color/transparent" 
+			android:onClick="itemClicked" />
+		<ImageButton
+			android:id="@+id/HeaderButtonSearch"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:background="@android:color/transparent" 
+			android:onClick="itemClicked" />
+	</LinearLayout>
+</RelativeLayout>

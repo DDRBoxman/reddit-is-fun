@@ -35,7 +35,7 @@ public class RedditCommunicator {
 		}
 	}
 	
-	public void getRequest(String path, List<NameValuePair> parameters) {
+	public void getRequest(String path) {
 		HttpGet httpget = new HttpGet(mSiteURL + path);
 		doRequest(httpget);
 	}
@@ -67,5 +67,9 @@ public class RedditCommunicator {
 	
 	public void login() {
 		
+	}
+	
+	public void loadSubreddit(String subreddit) {
+		getRequest(subreddit + ".json");
 	}
 }
