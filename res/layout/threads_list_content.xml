@@ -30,11 +30,12 @@
         android:layout_height="fill_parent"
         android:orientation="vertical">
 
-    <ListView android:id="@android:id/list"
+    <include android:id="@+id/include01" android:layout_height="wrap_content" layout="@layout/header" android:layout_width="fill_parent"></include><ListView android:id="@android:id/list"
     	android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
 	    android:cacheColorHint="#00000000"
-    />
+    >
+</ListView>
 
     <ScrollView android:id="@android:id/empty"
         android:layout_width="fill_parent"
