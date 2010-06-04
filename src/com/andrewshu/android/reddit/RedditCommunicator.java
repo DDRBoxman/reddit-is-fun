@@ -1,6 +1,7 @@
 package com.andrewshu.android.reddit;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,12 +41,13 @@ public class RedditCommunicator {
 		doRequest(httpget);
 	}
 	
-	private void doRequest(HttpRequestBase request) {
+	private InputStream doRequest(HttpRequestBase request) {
 		try {
 		     // Perform the HTTP request
 	    	HttpResponse response;
 			response = mHttpClient.execute(request);
 			HttpEntity entity = response.getEntity();
+        	return entity.getContent();
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,6 +55,8 @@ public class RedditCommunicator {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return null;
 	}
 	
 	public void vote(String id, String voteDirection, String subreddit) {
