@@ -1952,6 +1952,7 @@ public class CommentsListActivity extends ListActivity
     			public void onClick(View v) {
     				if (mReplyTargetName != null) {
 	    				new CommentReplyTask(mReplyTargetName).execute(replyBody.getText());
+	    				replyBody.setText("");
 	    				dismissDialog(Constants.DIALOG_REPLY);
     				}
     				else {
@@ -1961,6 +1962,7 @@ public class CommentsListActivity extends ListActivity
     		});
     		replyCancelButton.setOnClickListener(new OnClickListener() {
     			public void onClick(View v) {
+    				replyBody.setText("");
     				dismissDialog(Constants.DIALOG_REPLY);
     			}
     		});
@@ -1980,6 +1982,7 @@ public class CommentsListActivity extends ListActivity
     			public void onClick(View v) {
     				if (mReplyTargetName != null) {
 	    				new EditTask(mReplyTargetName).execute(replyBody.getText());
+	    				replyBody.setText("");
 	    				dismissDialog(Constants.DIALOG_EDIT);
     				}
     				else {
@@ -1989,6 +1992,7 @@ public class CommentsListActivity extends ListActivity
     		});
 			replyCancelButton.setOnClickListener(new OnClickListener() {
     			public void onClick(View v) {
+    				replyBody.setText("");
     				dismissDialog(Constants.DIALOG_EDIT);
     			}
     		});
