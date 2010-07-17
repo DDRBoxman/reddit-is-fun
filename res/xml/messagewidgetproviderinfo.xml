@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:minWidth="72dp"
+  android:initialLayout="@layout/message_widget_layout"
+  android:minHeight="72dp"
+  android:configure="com.andrewshu.android.reddit.MessageWidgetConfigure" android:updatePeriodMillis="900000">
+</appwidget-provider>

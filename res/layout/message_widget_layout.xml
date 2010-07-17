@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content" android:id="@+id/widget">
+<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon" android:layout_centerInParent="true" android:id="@+id/MessagesWidgetIcon"></ImageView>
+<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/unread_sphere" android:maxHeight="25dp" android:maxWidth="25dp" android:id="@+id/UnreadMessagesImageView" android:visibility="gone"></ImageView>
+</RelativeLayout>
